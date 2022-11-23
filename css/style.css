@@ -1,0 +1,8 @@
+#badge{
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    background-color: rgb(90, 176, 219);
+    padding: .3rem;
+    border-radius: 20px;
+}
