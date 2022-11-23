@@ -22,7 +22,7 @@
                     <div class="card">
 
                         <div class="list-group">
-                            <div class="list-group-item d-flex align-items-center" v-for="task in taskList">
+                            <div class="list-group-item d-flex align-items-center" v-for="(task, i) in taskList">
 
                                 <label for="task_input" class="form-check">
                                     <input type="checkbox" id="task_input" class="form-check-input"
@@ -30,7 +30,8 @@
                                     <span :class="task.done ? 'text-decoration-line-through' : ''">{{task.text}}</span>
                                 </label>
 
-                                <button class="btn btn-danger btn-sm ms-auto">X</button>
+                                <button class="btn btn-danger btn-sm ms-auto"
+                                    @click="taskDelete(i)">X</button>
                             </div>
                         </div>
                     </div>
