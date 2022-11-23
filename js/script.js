@@ -17,13 +17,24 @@ createApp({
                     text: "Leggere il flacone del Prozac",
                     done: false,
                 }
-            ]
+            ],
+
+            newTask : {
+                text: "",
+            }
         }
     },
 
     methods:{
         taskDelete(index){
-            this.taskList.splice(index);
-        }
+            this.taskList.splice(index, 1)
+        },
+
+        taskAdd(){
+            this.taskList.push({
+                text : this.newTask.text,
+                done: false,
+            });
+        },
     }
 }).mount("#app");
