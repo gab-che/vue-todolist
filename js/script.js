@@ -13,6 +13,9 @@ createApp({
                 }, {
                     text: "Leggere Horcynus Orca",
                     done: false,
+                }, {
+                    text: "Leggere il flacone del Prozac",
+                    done: false,
                 }
             ]
         }
