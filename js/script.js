@@ -70,6 +70,18 @@ createApp({
             })
 
             return categories
+        },
+
+        onStatusChange(index){
+            const task = this.taskList[index];
+            
+            if(task.done){
+                task.dateCompleted = new Date();
+                task.dateAdded = '';
+            } else{
+                task.dateCompleted = null;
+                task.dateAdded = new Date;
+            }
         }
     }
 }).mount("#app");
