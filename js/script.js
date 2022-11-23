@@ -8,18 +8,26 @@ createApp({
                     text: "Imparare a usare Vue Js",
                     done: false,
                     badge: "Codice",
+                    dateAdded: new Date(2022, 11, 23, 17, 43),
+                    dateCompleted: null,
                 }, {
                     text: "Capire se Vue Js è veramente un pacchetto",
                     done: false,
                     badge: "Codice",
+                    dateAdded: new Date(2022, 11, 23, 17, 43),
+                    dateCompleted: null,
                 }, {
                     text: "Leggere Horcynus Orca",
                     done: false,
                     badge: "Libri",
+                    dateAdded: new Date(2022, 11, 23, 17, 43),
+                    dateCompleted: null,
                 }, {
                     text: "Leggere il flacone del Prozac",
                     done: false,
                     badge: "Salute",
+                    dateAdded: new Date(2022, 11, 23, 17, 43),
+                    dateCompleted: null,
                 }
             ],
 
@@ -43,6 +51,8 @@ createApp({
                     text : this.newTask.text,
                     done: false,
                     badge: this.newTask.badge,
+                    dateAdded: new Date(),
+                    dateCompleted: null,
                 })
 
             };
