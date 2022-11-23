@@ -15,27 +15,59 @@
             <div class="row">
                 <div class="col-md-6 m-auto">
                     <h1>To do list</h1>
+
+                    <!-- Form -->
                     <div class="form">
                         <div class="input-group mb-3">
 
+                            <!-- Aggiungi task -->
                             <input type="text" class="form-control" placeholder="Aggiungi task"
                             v-model="newTask.text" @keyup.enter="taskAdd">
 
+                            <!-- Aggiungi categoria -->
                             <input class="form-control" list="categories" placeholder="Categoria"
                             v-model="newTask.badge" @keyup.enter="taskAdd">
                             <datalist id="categories">
                                 <option :value="category" v-for="category in fetchCategories()">
                             </datalist>
 
+                            <!-- Bottone aggiungi -->
                             <button class="btn btn-outline-success" type="button" id="button-addon2"
                             @click="taskAdd">&#9998; Aggiungi</button>
                         </div>
                     </div>
 
+                    <!-- Tab per task fatte | non completate -->
+                    <ul class="list-group list-group-horizontal justify-content-center mb-1">
+                        <li class="list-group-item flex-fill">
+                            <a href="#" class=" d-flex justify-content-between align-items-center gap-2">
+                                <span>Tutte</span>
+                                <span class="badge bg-primary rounded-pill">n</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item flex-fill">
+                            <a href="#" class="d-flex justify-content-between align-items-center gap-2">
+                                <span>Da fare</span>
+                                <span class="badge bg-primary rounded-pill">n</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item flex-fill">
+                            <a href="#" class="d-flex justify-content-between align-items-center gap-2">
+                                <span>Completate</span>
+                                <span class="badge bg-primary rounded-pill">n</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Contenitore task -->
                     <div class="card">
                         <div class="list-group">
-                            <div class="list-group-item d-flex align-items-center" v-for="(task, i) in taskList">
+                            
+                            <!-- Task -->
+                            <div class="list-group-item d-flex align-items-center task_item"
+                                v-for="(task, i) in taskList">
 
+                                <!-- Checkbox e testo task -->
                                 <label class="form-check">
                                     <input type="checkbox" class="form-check-input"
                                         v-model="task.done" @change="onStatusChange(i)">
@@ -48,7 +80,8 @@
                                     </div>
                                 </label>
 
-                                <button class="btn btn-danger btn-sm ms-auto"
+                                <!-- Bottone cancella task -->
+                                <button class="btn btn-danger btn-sm ms-auto btn_delete"
                                     @click="taskDelete(i)">&#9746;</button>
                             </div>
                         </div>
