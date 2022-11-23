@@ -10,7 +10,29 @@
     <title>To-do List</title>
 </head>
 <body>
-    
+    <div id="app">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-6 m-auto">
+                    <h1>To do list</h1>
+
+                    <div class="form-check">
+
+                        <div class="task_element" v-for="task in taskList">
+                            <input class="form-check-input" type="checkbox" id="task_input"
+                                v-model="task.done" >
+                            <label class="form-check-label" for="task_input">
+                                {{task.text}}
+                            </label>
+                        </div>
+                            
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
